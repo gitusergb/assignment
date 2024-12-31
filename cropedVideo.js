@@ -40,12 +40,10 @@ const CropedVideo = () => {
 
     const file = event.target.files[0];
     const blobURL = URL.createObjectURL(file);
-    // const blobURL =`https://drive.google.com/file/d/${fileId}/preview`;
     setVideoFileValue(file);
     setVideoSrc(blobURL);
   };
 
-  //Convert the time obtained from the video to HH:MM:SS format
   const convertToHHMMSS = (val) => {
     const secNum = parseInt(val, 10);
     let hours = Math.floor(secNum / 3600);
@@ -62,7 +60,6 @@ const CropedVideo = () => {
       seconds = '0' + seconds;
     }
     let time;
-    // only mm:ss
     if (hours === '00') {
       time = minutes + ':' + seconds;
     } else {
